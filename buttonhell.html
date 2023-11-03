@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            color:white;
+            background-color: red;
+        }
+        button:hover{
+            background-color: blue;
+            transition-duration: 0.5s;
+        }
+    </style>
+    <script>
+        let buttonhell = () => {
+            let body= document.querySelector("body");
+            body.insertAdjacentHTML("afterend",
+            `
+            <button onclick="buttonhell()"> Button Hell!</button>
+            `)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="buttonhell()"> Button Hell!</button>
+</body>
+</html>
