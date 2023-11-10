@@ -5,26 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        button{
-            color:white;
-            background-color: red;
+        .hell{
+            background-color:rgb(255, 0, 0);
         }
-        button:hover{
-            background-color: blue;
-            transition-duration: 0.5s;
+        .hell:hover{
+            background-color: hotpink;
+            transition-duration: 0.714s;
         }
     </style>
-    <script>
-        let buttonhell = () => {
-            let body= document.querySelector("body");
-            body.insertAdjacentHTML("afterend",
-            `
-            <button onclick="buttonhell()"> Button Hell!</button>
-            `)
-        }
-    </script>
 </head>
 <body>
-    <button onclick="buttonhell()"> Button Hell!</button>
+    <div>
+        <button class="hell"> button hell!</button>
+    </div>
+    <script>
+        let eventing = () => {
+            let hellAgain = document.createElement("button");
+            hellAgain.classList.add("hell");
+            hellAgain.innerText= "Button Hell!";
+            let div = document.querySelector("div");
+            div.appendChild(hellAgain);
+            hellAgain.addEventListener("click", eventing);
+        }
+        let hell = document.querySelector(".hell");
+        hell.addEventListener("click", eventing);
+    </script>
 </body>
 </html>
